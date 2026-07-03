@@ -25,6 +25,7 @@ import {
   FontSize,
 } from "@ckeditor/ckeditor5-font";
 import { Heading } from "@ckeditor/ckeditor5-heading";
+import { GeneralHtmlSupport } from "@ckeditor/ckeditor5-html-support";
 import { Highlight } from "@ckeditor/ckeditor5-highlight";
 import {
   Image,
@@ -79,6 +80,7 @@ class Editor extends DecoupledEditor {
     FontFamily,
     FontSize,
     Heading,
+    GeneralHtmlSupport,
     Highlight,
     Image,
     ImageCaption,
@@ -166,6 +168,17 @@ class Editor extends DecoupledEditor {
         "mergeTableCells",
         "tableCellProperties",
         "tableProperties",
+      ],
+    },
+    htmlSupport: {
+      allow: [
+        {
+          name: "table",
+          styles: {
+            "border-collapse": true,
+            width: true,
+          },
+        },
       ],
     },
     // heading: {
