@@ -169,14 +169,61 @@ class Editor extends DecoupledEditor {
         "tableCellProperties",
         "tableProperties",
       ],
+      tableProperties: {
+        defaultProperties: {
+          width: "100%",
+          borderStyle: "solid",
+          borderWidth: "1px",
+          borderColor: "#000000",
+        },
+      },
+      tableCellProperties: {
+        defaultProperties: {
+          borderStyle: "solid",
+          borderWidth: "1px",
+          borderColor: "#000000",
+          padding: "8px",
+        },
+      },
     },
     htmlSupport: {
       allow: [
         {
+          name: "figure",
+          classes: ["table"],
+          styles: {
+            width: true,
+            height: true,
+            float: true,
+          },
+        },
+        {
           name: "table",
           styles: {
             "border-collapse": true,
+            "border-spacing": true,
             width: true,
+            height: true,
+            border: true,
+            "border-width": true,
+            "border-style": true,
+            "border-color": true,
+            "background-color": true,
+          },
+        },
+        {
+          name: /^(td|th)$/,
+          styles: {
+            border: true,
+            "border-width": true,
+            "border-style": true,
+            "border-color": true,
+            padding: true,
+            width: true,
+            height: true,
+            "background-color": true,
+            "vertical-align": true,
+            "text-align": true,
           },
         },
       ],
